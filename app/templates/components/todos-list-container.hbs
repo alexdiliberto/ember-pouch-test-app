@@ -1,0 +1,14 @@
+<p>
+  {{one-way-input item update=(action (mut item))}} <button {{action add item}}>Add</button>
+</p>
+<ul>
+  {{#each todos as |todo|}}
+    {{#with (changeset todo skipValidate=true) as |changeset|}}
+      <li>
+        {{one-way-input changeset.item update=(action (mut changeset.item))}} - {{changeset.isComplete}}
+        {{one-way-checkbox changeset.isComplete update=(action (mut changeset.isComplete))}}
+        <button {{action edit changeset}}>Edit</button>
+      </li>
+    {{/with}}
+  {{/each}}
+</ul>

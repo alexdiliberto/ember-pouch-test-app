@@ -2,8 +2,11 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-todo-app',
+    modulePrefix: 'ember-pouch-test-app',
     environment: environment,
+    emberPouch: {
+      localDb: 'ember-pouch-todo-test'
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
